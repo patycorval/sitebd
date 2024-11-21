@@ -41,9 +41,11 @@
                     <td th:text="${reserva.nome}"></td>
                     <td th:text="${reserva.data}"></td>
                     <td th:text="${reserva.hora}"></td>
-                    <td th:text="${reserva.duracao}"></td>
+                    <td th:text="${reserva.duracao} + ' hora(s)'"></td>
                     <td>
-                        <a th:href="@{'/atualizar/' + ${reserva.id}}" id="link-atualizar">Atualizar</a>
+                        <form th:action="@{'/atualizar/' + ${reserva.id}}" method="get">
+                            <button type="submit" id="atualizar"> Atualizar </button>
+                        </form>
                         <form th:action="@{'/deletar/' + ${reserva.id}}" method="post" class="btn-apagar">
                             <button type="submit" id="apagar"> Cancelar reserva </button>
                         </form>
@@ -51,6 +53,7 @@
                 </tr>
             </tbody>
         </table>
-        <a th:href="@{/}">Voltar</a>
+        <a class="voltar" th:href="@{/}">Voltar</a>
+        
     </body>
 </html>

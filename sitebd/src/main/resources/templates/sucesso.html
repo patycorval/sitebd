@@ -11,14 +11,27 @@
     <title>Reserva Auditório</title>
 </head>
 <body>
-    <h1 class="success-message">Reserva concluída com sucesso!</h1>
-    <p>Obrigado por reservar a sala.</p>
-    <p>Sala reservada: <span th:text="${reserva.numero}"></span></p>
-    <p>Data: <span th:text="${reserva.data}"></span></p>
-    <p>Hora: <span th:text="${reserva.hora}"></span></p>
-    <a th:href="@{/}">Voltar para a página inicial</a>
+    <header>
+        <div class="header">
+            <a th:href="@{/}"><img class="logo-fatec" th:src="@{img/logo-fatec-branco.png}" alt="Logo Fatec"> </a>
+                <ul class="links">
+                    <li> <a th:href="@{/}" th:classappend="${activePage == 'principal'} ? 'active' : ''"> Reservar </a></li>
+                    <li><a th:href="@{/listagem}" th:classappend="${activePage == 'listagem'} ? 'active' : ''" >Minhas Reservas</a></li>
+                    <li><a th:href="@{/contato}" th:classappend="${activePage == 'contato'} ? 'active' : ''" >Contato</a></li>
+                </ul>
+        </div>
+    </header>
+
+    <h1 class="sucesso">Reserva concluída com sucesso!</h1>
+    <h2 class="sucesso">Obrigado por reservar a sala.</h2>
+    <div class="divp">
+        <p class="sucessop">Sala reservada: <span th:text="${reserva.numero}"></span></p>
+        <p class="sucessop">Data: <span th:text="${reserva.data}"></span></p>
+        <p class="sucessop">Hora: <span th:text="${reserva.hora}"></span></p>
+    </div>
+    <a th:href="@{/}" class="voltar">Voltar para a página inicial</a>
     <br>
-    <a th:href="@{/listagem}">Ver suas reservas</a>
+    <a th:href="@{/listagem}" class="voltar">Ver suas reservas</a>
 
 
 </body>
