@@ -1,7 +1,7 @@
 # Docker é uma vm
 
-FROM openjdk:17-jdk-alphine
-# quer aplhine só com java
+FROM openjdk:17-jdk-alpine
+# quer apline só com java
 
 # cria uma pasta app dentro da maquina virtual
 WORKDIR /app 
